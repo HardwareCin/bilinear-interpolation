@@ -27,8 +27,10 @@
       });
       
       background.on('click', function(e) {
-        points.push(e.x);
-        points.push(e.y);
+        if(points.length<8){
+        	points.push(e.x);
+        	points.push(e.y);
+        }
         var circ = new Circle(e.x, e.y, point_rad)
           .fill('navy');
         if(points.length>2) {
